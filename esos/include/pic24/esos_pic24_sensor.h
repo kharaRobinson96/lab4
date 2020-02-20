@@ -27,8 +27,8 @@
  *
  */
 
-#ifndef ESOS_pic24_SENSOR_H
-#define ESOS_pic24_SENSOR_H
+#ifndef ESOS_PIC24_SENSOR_H
+#define ESOS_PIC24_SENSOR_H
 
 /**
  * \addtogroup ESOS_Task_Sensor_Service

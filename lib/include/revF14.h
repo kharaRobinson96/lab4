@@ -2,7 +2,7 @@
 // of the REVF14_H token
 #ifndef REVF14_H    
 #define REVF14_H
-#define NUM_UART_MODS 1
+//#define NUM_UART_MODS 1
 #include "pic24_all.h"
 
 // The following definitions are more or less directly from the code examples 

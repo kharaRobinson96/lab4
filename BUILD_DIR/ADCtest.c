@@ -14,11 +14,11 @@
 
 uint16_t uint16_POT = 0;
 uint8_t u8_autoSampleTime = 31;
-uint16_t u16_ch0PositiveMask = 2;
+uint16_t u16_ch0PositiveMask = 2; 
 	
 ESOS_USER_TASK(demoADC){
 	ESOS_TASK_BEGIN();
-		printf("begin");
+		
 		CONFIG_RB2_AS_ANALOG();
 		AD1CON1bits.ADON = 0;
 		AD1CON1 = ADC_CLK_AUTO | ADC_AUTO_SAMPLING_OFF;
@@ -30,7 +30,7 @@ ESOS_USER_TASK(demoADC){
 		while(1){
 			AD1CON1bits.SAMP = 1;                    //start sampling
 			NOP();                                  //takes one clock to clear previous DONE flag, delay before checking.
-			WAIT_UNTIL_CONVERSION_COMPLETE_ADC1();
+			WAIT_UNTIL_CONVERSION_COMPLETE_ADC1();   //waits for AD1CON1bits.DONE
 			uint16_POT = ADC1BUF0;
 			printf("%u,\n", uint16_POT);
 			DELAY_MS(500);

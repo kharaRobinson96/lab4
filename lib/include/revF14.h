@@ -59,4 +59,24 @@ void CONFIG_SW3()  {
 #define SW3_PRESSED (_RC15 == 0)
 #define SW3_RELEASED (_RC15 == 1)
 
+// RPGA - Connected to RB8
+void CONFIG_RPGA()  {
+  CONFIG_RB8_AS_DIG_INPUT();
+  ENABLE_RB8_PULLUP();
+  // Give the pullup some time to take effect.
+  DELAY_US(1);
+}
+#define RPGA_LOW (_RB8 == 0)
+#define RPGA_HIGH (_RB8 == 1)
+
+// RPGB - Connected to RB9
+void CONFIG_RPGB()  {
+  CONFIG_RB9_AS_DIG_INPUT();
+  ENABLE_RB9_PULLUP();
+  // Give the pullup some time to take effect.
+  DELAY_US(1);
+}
+#define RPGB_LOW (_RB9 == 0)
+#define RPGB_HIGH (_RB9 == 1)
+
 #endif // closes the #ifndef block

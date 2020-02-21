@@ -6,17 +6,13 @@
  * 
  * ****************************************************************/
 #include <esos_f14ui.h>
-
 #include <esos.h>
-
 #include "esos_pic24.h"
-
 #include <revF14.h>
-
 #include <stdio.h>
 
-#
-define MINIMUM_LED_FLASH_PERIOD 100# define DEBOUNCE_PERIOD 15
+#define MINIMUM_LED_FLASH_PERIOD 100
+#define DEBOUNCE_PERIOD 15
 
 _st_esos_uiF14Data_t _st_esos_uiF14Data;
 

@@ -2,7 +2,7 @@
 // of the REVF14_H token
 #ifndef REVF14_H    
 #define REVF14_H
-
+//#define NUM_UART_MODS 1
 #include "pic24_all.h"
 
 // The following definitions are more or less directly from the code examples 
@@ -58,5 +58,17 @@ void CONFIG_SW3()  {
 
 #define SW3_PRESSED (_RC15 == 0)
 #define SW3_RELEASED (_RC15 == 1)
+
+//************RPG**********
+void CONFIG_RPG()  {
+  CONFIG_RB8_AS_DIG_INPUT();
+  CONFIG_RB9_AS_DIG_INPUT();
+  ENABLE_RB8_PULLUP();
+  ENABLE_RB9_PULLUP();
+  // Give the pullup some time to take effect.
+  DELAY_US(1);
+}
+#define RPGA (_RB8)
+#define RPGB (_RB9)
 
 #endif // closes the #ifndef block
